@@ -52,7 +52,7 @@ exports.exportExcel = async (req, res) => {
 
         const sheet = workbook.addWorksheet("Orders");
 
-        sheet.mergeCells("A1:I1");
+        sheet.mergeCells("A1:J1");
 
         sheet.getCell("A1").value = "JARVI SEEDS & NURSERY";
 
@@ -76,6 +76,7 @@ exports.exportExcel = async (req, res) => {
             "Jarvi Red Plus",
             "White Honey",
             "Full Address",
+            "Pincode",
             "Delivery Date"
         ]);
 
@@ -123,7 +124,7 @@ exports.exportExcel = async (req, res) => {
             const address = `${order.fullAddress},
 ${order.village},
 ${order.district},
-${order.state} - ${order.pinCode}`;
+${order.state}`;
 
             sheet.addRow([
 
@@ -142,6 +143,8 @@ ${order.state} - ${order.pinCode}`;
                 order.varieties.jarviWhiteHoney,
 
                 address,
+
+                order.pinCode,
 
                 order.deliveryDate
 
@@ -166,6 +169,8 @@ ${order.state} - ${order.pinCode}`;
             { width: 15 },
 
             { width: 55 },
+
+            { width: 12 },
 
             { width: 18 }
 

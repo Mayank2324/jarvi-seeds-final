@@ -83,6 +83,7 @@ exports.downloadPDF = async (req, res) => {
   "Red+",
   "White",
   "Full Address",
+  "Pincode",
   "Delivery",
 ],
 
@@ -92,7 +93,7 @@ orders.forEach((o) => {
 
   const address = `${o.fullAddress}
 ${o.village}, ${o.district}
-${o.state} - ${o.pinCode}`;
+${o.state}`;
 
   table.rows.push([
     o.uniqueId,
@@ -103,6 +104,7 @@ ${o.state} - ${o.pinCode}`;
     o.varieties.jarviRedPlus,
     o.varieties.jarviWhiteHoney,
     address,
+    o.pinCode,
     o.deliveryDate,
   ]);
 
