@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Premium Guava Plants | Jarvi Seeds & Nursery</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a href="index.html" class="logo">
+            🌱 <span data-i18n="brand_name">Jarvi</span> <span data-i18n="brand_tagline">Seeds & Nursery</span>
+        </a>
+
+        <nav>
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="index.html#products" data-i18n="nav_products">Products</a>
+            <a href="index.html#about" data-i18n="nav_about">About</a>
+            <a href="order.html" class="nav-cta" data-i18n="nav_order_now">Order Now</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="order-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-badge" data-i18n="hero_badge">
+                Trusted by Farmers Across Gujarat
+            </span>
+
+            <h1>
+                <span data-i18n="hero_title_main">Order Premium Quality</span>
+                <span data-i18n="hero_title_highlight">Guava Plants</span>
+            </h1>
+
+            <p>
+
+                <span data-i18n="hero_desc_intro">Fill in the order form below.</span>
+
+                Once submitted,
+
+                ✔ <span data-i18n="hero_desc_check1">You will receive an SMS confirmation.</span>
+                ✔ <span data-i18n="hero_desc_check2">Jarvi Nursery will instantly receive your order notification.</span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="order-section">
+
+<div class="container">
+
+<div class="order-card">
+
+<div class="card-header">
+
+<h2>🌱 <span data-i18n="order_card_title">Place Your Order</span></h2>
+
+<p data-i18n="order_card_subtitle">
+Please provide accurate details so we can process your order quickly.
+</p>
+
+</div>
+
+<form id="orderForm" class="order-form">
+
+<div class="form-section">
+
+<h3>👨 <span data-i18n="section_farmer_info">Farmer Information</span></h3>
+
+<div class="form-group">
+
+<label for="farmerName" data-i18n="label_farmer_name">
+Farmer Name *
+</label>
+
+<input
+type="text"
+id="farmerName"
+name="farmerName"
+placeholder="Enter Farmer Name"
+data-i18n-placeholder="placeholder_farmer_name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="mobile" data-i18n="label_mobile_number">
+Mobile Number *
+</label>
+
+<input
+type="tel"
+id="mobile"
+name="mobile"
+maxlength="10"
+pattern="[6-9][0-9]{9}"
+placeholder="9876543210"
+required>
+
+</div>
+
+</div>
+
+
+<div class="form-section">
+
+<h3>🌱 <span data-i18n="section_select_variety">Select Plant Variety</span></h3>
+
+<div class="variety-grid">
+    <!-- Jarvi Red -->
+    <div class="variety-card">
+        <div class="variety-top">
+            <div class="plant-icon">🌱</div>
+
+            <div class="plant-info">
+                <h4 data-i18n="variety_jarvi_red_name">Jarvi Red</h4>
+                <p data-i18n="variety_jarvi_red_desc">High Yield Premium Variety</p>
+            </div>
+        </div>
+
+        <div class="select-row">
+
+            <label class="checkbox-wrapper">
+
+                <input
+                    type="checkbox"
+                    class="variety-check"
+                    name="variety"
+                    value="Jarvi Red"
+                    data-target="jarviRed">
+
+                <span data-i18n="label_select_variety">Select Variety</span>
+
+            </label>
+
+            <input
+                type="number"
+                id="jarviRed"
+                name="jarviRed"
+                min="1"
+                placeholder="Qty"
+                data-i18n-placeholder="placeholder_qty"
+                disabled>
+
+        </div>
+
+    </div>
+
+
+    <!-- Jarvi Red 1 -->
+
+    <div class="variety-card">
+
+        <div class="variety-top">
+
+            <div class="plant-icon">🌿</div>
+
+            <div class="plant-info">
+
+                <h4 data-i18n="variety_jarvi_red1_name">Jarvi Red 1</h4>
+
+                <p data-i18n="variety_jarvi_red1_desc">Commercial Farming Variety</p>
+
+            </div>
+
+        </div>
+
+        <div class="select-row">
+
+            <label class="checkbox-wrapper">
+
+                <input
+                    type="checkbox"
+                    class="variety-check"
+                    name="variety"
+                    value="Jarvi Red 1"
+                    data-target="jarviRed1">
+
+                <span data-i18n="label_select_variety">Select Variety</span>
+
+            </label>
+
+            <input
+                type="number"
+                id="jarviRed1"
+                name="jarviRed1"
+                min="1"
+                placeholder="Qty"
+                data-i18n-placeholder="placeholder_qty"
+                disabled>
+
+        </div>
+
+    </div>
+
+
+    <!-- Jarvi Red Plus -->
+
+    <div class="variety-card">
+
+        <div class="variety-top">
+
+            <div class="plant-icon">🍃</div>
+
+            <div class="plant-info">
+
+                <h4 data-i18n="variety_jarvi_red_plus_name">Jarvi Red Plus</h4>
+
+                <p data-i18n="variety_jarvi_red_plus_desc">Premium Export Quality</p>
+
+            </div>
+
+        </div>
+
+        <div class="select-row">
+
+            <label class="checkbox-wrapper">
+
+                <input
+                    type="checkbox"
+                    class="variety-check"
+                    name="variety"
+                    value="Jarvi Red Plus"
+                    data-target="jarviRedPlus">
+
+                <span data-i18n="label_select_variety">Select Variety</span>
+
+            </label>
+
+            <input
+                type="number"
+                id="jarviRedPlus"
+                name="jarviRedPlus"
+                min="1"
+                placeholder="Qty"
+                data-i18n-placeholder="placeholder_qty"
+                disabled>
+
+        </div>
+
+    </div>
+
+
+    <!-- Jarvi White Honey -->
+
+    <div class="variety-card">
+
+        <div class="variety-top">
+
+            <div class="plant-icon">🌼</div>
+
+            <div class="plant-info">
+
+                <h4 data-i18n="variety_white_honey_name">Jarvi White Honey</h4>
+
+                <p data-i18n="variety_white_honey_desc">Sweet White Flesh Variety</p>
+
+            </div>
+
+        </div>
+
+        <div class="select-row">
+
+            <label class="checkbox-wrapper">
+
+                <input
+                    type="checkbox"
+                    class="variety-check"
+                    name="variety"
+                    value="Jarvi White Honey"
+                    data-target="jarviWhiteHoney">
+
+                <span data-i18n="label_select_variety">Select Variety</span>
+
+            </label>
+
+            <input
+                type="number"
+                id="jarviWhiteHoney"
+                name="jarviWhiteHoney"
+                min="1"
+                placeholder="Qty"
+                data-i18n-placeholder="placeholder_qty"
+                disabled>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- Delivery Details -->
+
+<div class="form-section">
+
+<h3>📍 <span data-i18n="section_delivery_info">Delivery Information</span></h3>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label for="address" data-i18n="label_full_address">Full Address *</label>
+
+<textarea
+id="address"
+name="address"
+rows="4"
+placeholder="Enter your complete address"
+data-i18n-placeholder="placeholder_address"
+required></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label for="state" data-i18n="label_state">State *</label>
+
+<input
+type="text"
+id="state"
+name="state"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="district" data-i18n="label_district">District *</label>
+
+<input
+type="text"
+id="district"
+name="district"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="village" data-i18n="label_village">Village *</label>
+
+<input
+type="text"
+id="village"
+name="village"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="pin" data-i18n="label_pin_code">PIN Code *</label>
+
+<input
+type="text"
+id="pin"
+name="pin"
+maxlength="6"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="farmLocation" data-i18n="label_farm_location">Farm Location</label>
+
+<input
+type="text"
+id="farmLocation"
+name="farmLocation">
+
+</div>
+
+<div class="form-group">
+
+<label for="deliveryDate" data-i18n="label_delivery_date">Preferred Delivery Date</label>
+
+<input
+type="date"
+id="deliveryDate"
+name="deliveryDate">
+
+</div>
+
+</div>
+        <!-- Submit Section -->
+        <div class="form-section submit-section">
+
+            <div class="order-note">
+                <h4>📌 <span data-i18n="important_info_title">Important Information</span></h4>
+
+                <ul>
+                    <li>✔ <span data-i18n="note_1">Please enter accurate details.</span></li>
+                    <li>✔ <span data-i18n="note_2">Your order is confirmed only after verification by our team.</span></li>
+                    <li>✔ <span data-i18n="note_3">You will receive an SMS confirmation after submission.</span></li>
+                    <li>✔ <span data-i18n="note_4">Our team will contact you regarding delivery and payment.</span></li>
+                </ul>
+            </div>
+
+        <!-- Payment Details -->
+<div class="payment-details">
+
+    <h3>💳 <span data-i18n="payment_title">Payment Details</span></h3>
+
+    <p data-i18n="payment_description">
+        Please make the payment to the account below and then place your order.
+        Our team will contact you to confirm the payment and process your order.
+    </p>
+
+    <div class="payment-card">
+
+        <table>
+            <tr>
+                <td><strong data-i18n="payment_label_account_name">Account Name</strong></td>
+                <td>Jarvi Nursery</td>
+            </tr>
+
+            <tr>
+                <td><strong data-i18n="payment_label_bank_name">Bank Name</strong></td>
+                <td>HDFC Bank</td>
+            </tr>
+
+            <tr>
+                <td><strong data-i18n="payment_label_account_number">Account Number</strong></td>
+                <td>50200017432993</td>
+            </tr>
+
+            <tr>
+                <td><strong data-i18n="payment_label_ifsc_code">IFSC Code</strong></td>
+                <td>HDFC0000255</td>
+            </tr>
+
+            <tr>
+                <td><strong data-i18n="payment_label_branch">Branch</strong></td>
+                <td>Ankleshwar</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>  
+
+
+	  <button type="submit" id="submitBtn" class="submit-btn">
+                🌱 <span data-i18n="submit_button_text">Place My Order</span>
+            </button>
+
+            <div id="responseMessage" class="response-message"></div>
+
+        </div>
+
+    </form>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why-jarvi">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2 data-i18n="why_title">Why Farmers Choose Jarvi Nursery</h2>
+            <p data-i18n="why_subtitle">Trusted Quality • Healthy Plants • Expert Guidance</p>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-box">
+                <div class="feature-icon">🌱</div>
+                <h3 data-i18n="feature1_title">Healthy Plants</h3>
+                <p data-i18n="feature1_desc">
+                    Every plant is carefully grown and inspected to ensure
+                    healthy roots and strong growth.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🚚</div>
+                <h3 data-i18n="feature2_title">Safe Delivery</h3>
+                <p data-i18n="feature2_desc">
+                    Plants are packed securely and delivered with maximum care
+                    to maintain freshness.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">👨‍🌾</div>
+                <h3 data-i18n="feature3_title">Farmer Support</h3>
+                <p data-i18n="feature3_desc">
+                    Our experts provide guidance on plantation,
+                    maintenance, irrigation and farming practices.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🏆</div>
+                <h3 data-i18n="feature4_title">Premium Quality</h3>
+                <p data-i18n="feature4_desc">
+                    High-yield varieties selected for better production
+                    and long-term profitability.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <h3>🌱 <span data-i18n="footer_brand_name">Jarvi Seeds & Nursery</span></h3>
+
+            <p data-i18n="footer_tagline">
+                Growing Trust, Delivering Quality.
+            </p>
+
+            <p data-i18n="footer_copyright_order">
+                © 2026 Jarvi Seeds & Nursery.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/language.js"></script>
+<script src="js/order.js"></script>
+
+</body>
+
+</html>

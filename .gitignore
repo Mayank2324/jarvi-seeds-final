@@ -1,0 +1,22 @@
+# Node modules
+backend/node_modules/
+
+# Environment variables
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Excel exports
+backend/data/*.xlsx
+
+# Generated exports
+backend/exports/
+
+# Render
+.render

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jarvi Seeds Admin Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+
+:root{
+  --db-green-dark:#1f4d2c;
+  --db-green:#2f7a3f;
+  --db-green-light:#eef7ee;
+  --db-red:#b3312c;
+  --db-red-deep:#8f2620;
+  --db-text:#23291f;
+  --db-muted:#5c6b58;
+  --db-line:#e1e8de;
+  --db-white:#fff;
+  --db-radius:12px;
+  --db-shadow:0 2px 8px rgba(31,77,44,.07), 0 10px 28px rgba(31,77,44,.06);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Inter","Segoe UI",Arial,sans-serif;
+}
+
+body{
+background:var(--db-green-light);
+color:var(--db-text);
+padding:28px clamp(16px,4vw,36px) 60px;
+}
+
+.dashboard-shell{
+max-width:1320px;
+margin:0 auto;
+}
+
+/* ---- Top bar ---- */
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:16px;
+margin-bottom:24px;
+padding-bottom:18px;
+border-bottom:1px solid var(--db-line);
+}
+
+.brand-row{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.brand-mark{
+font-size:26px;
+width:44px;
+height:44px;
+border-radius:10px;
+background:rgba(47,122,63,.12);
+display:flex;
+align-items:center;
+justify-content:center;
+flex:none;
+}
+
+.top h1{
+font-size:19px;
+font-weight:700;
+color:var(--db-green-dark);
+letter-spacing:-0.01em;
+}
+
+.top .subtitle{
+font-size:12px;
+color:var(--db-muted);
+margin-top:2px;
+letter-spacing:.02em;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.buttons input#monthPicker{
+padding:10px 14px;
+border:1px solid var(--db-line);
+border-radius:8px;
+font-size:14px;
+font-family:inherit;
+background:var(--db-white);
+color:var(--db-text);
+}
+
+button{
+padding:10px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+color:white;
+font-family:inherit;
+display:inline-flex;
+align-items:center;
+gap:6px;
+transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+button:hover{
+transform:translateY(-1px);
+box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+button:active{
+transform:translateY(0);
+}
+
+.download{
+background:var(--db-green);
+}
+
+.download:hover{
+background:var(--db-green-dark);
+}
+
+.logout{
+background:var(--db-red);
+}
+
+.logout:hover{
+background:var(--db-red-deep);
+}
+
+/* ---- Stat cards ---- */
+.cards{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:16px;
+margin-bottom:24px;
+}
+
+.card{
+background:var(--db-white);
+padding:20px 18px;
+border-radius:var(--db-radius);
+box-shadow:var(--db-shadow);
+text-align:center;
+border:1px solid var(--db-line);
+transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 4px 12px rgba(31,77,44,.10), 0 16px 34px rgba(31,77,44,.10);
+}
+
+.card h2{
+font-size:12.5px;
+font-weight:700;
+letter-spacing:.03em;
+text-transform:uppercase;
+color:var(--db-green);
+margin-bottom:10px;
+}
+
+.card h1{
+font-size:30px;
+font-weight:800;
+color:var(--db-green-dark);
+}
+
+/* ---- Search ---- */
+.searchBox{
+margin-bottom:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.searchBox input{
+width:100%;
+max-width:420px;
+padding:12px 16px;
+border:1px solid var(--db-line);
+border-radius:9px;
+font-size:15px;
+font-family:inherit;
+background:var(--db-white);
+color:var(--db-text);
+transition:border-color .15s ease, box-shadow .15s ease;
+}
+
+.searchBox input:focus{
+outline:none;
+border-color:var(--db-green);
+box-shadow:0 0 0 3px rgba(47,122,63,.15);
+}
+
+/* ---- Table ---- */
+.table-wrap{
+background:var(--db-white);
+border-radius:var(--db-radius);
+box-shadow:var(--db-shadow);
+border:1px solid var(--db-line);
+overflow:hidden;
+overflow-x:auto;
+}
+
+table{
+width:100%;
+min-width:760px;
+background:var(--db-white);
+border-collapse:collapse;
+font-size:14.5px;
+}
+
+th{
+background:var(--db-green-dark);
+color:white;
+padding:14px;
+font-weight:600;
+font-size:12.5px;
+letter-spacing:.03em;
+text-transform:uppercase;
+text-align:left;
+white-space:nowrap;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid var(--db-line);
+text-align:left;
+vertical-align:top;
+color:var(--db-text);
+}
+
+tbody tr:hover td{
+background:rgba(47,122,63,.05);
+}
+
+tbody tr:last-child td{
+border-bottom:none;
+}
+
+.seed-list{
+text-align:left;
+line-height:1.6;
+font-size:13.5px;
+color:var(--db-muted);
+}
+
+.deleteBtn{
+background:var(--db-red);
+color:white;
+padding:8px 14px;
+border-radius:7px;
+border:none;
+cursor:pointer;
+font-weight:600;
+font-size:13px;
+}
+
+.deleteBtn:hover{
+background:var(--db-red-deep);
+}
+
+/* ---- Responsive ---- */
+@media(max-width:1100px){
+  .cards{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(max-width:700px){
+  .top{flex-direction:column; align-items:stretch;}
+  .buttons{width:100%; flex-direction:column; align-items:stretch;}
+  .buttons input#monthPicker, .buttons button{width:100%; justify-content:center;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .searchBox input{max-width:100%;}
+}
+
+@media(max-width:480px){
+  .cards{grid-template-columns:1fr;}
+  .card{display:flex; align-items:center; justify-content:space-between; text-align:left; padding:16px 18px;}
+  .card h2{margin-bottom:0;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard-shell">
+
+<div class="top">
+
+<div class="brand-row">
+  <span class="brand-mark" aria-hidden="true">🌱</span>
+  <div>
+    <h1>Jarvi Seeds Admin Dashboard</h1>
+    <div class="subtitle">Orders, saplings and deliveries at a glance</div>
+  </div>
+</div>
+
+<div class="buttons">
+
+<input type="month" id="monthPicker">
+
+<button class="download" onclick="downloadPDF()">
+📄 PDF
+</button>
+
+<button class="download" onclick="downloadExcel()">
+📊 Excel
+</button>
+
+<button class="logout" onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h2>Total Orders</h2>
+<h1 id="totalOrders">0</h1>
+</div>
+
+<div class="card">
+<h2>Jarvi Red</h2>
+<h1 id="redTotal">0</h1>
+</div>
+
+<div class="card">
+<h2>Jarvi Red 1</h2>
+<h1 id="red1Total">0</h1>
+</div>
+
+<div class="card">
+<h2>Jarvi Red Plus</h2>
+<h1 id="redPlusTotal">0</h1>
+</div>
+
+<div class="card">
+<h2>White Honey</h2>
+<h1 id="whiteTotal">0</h1>
+</div>
+
+</div>
+
+<div class="searchBox">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search by Order ID, Farmer, Mobile or Village"
+onkeyup="searchOrders()">
+
+</div>
+
+<div class="table-wrap">
+<table>
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+<th>Customer</th>
+<th>Mobile</th>
+<th>Ordered Seeds</th>
+<th>Village</th>
+<th>Delivery</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+</tbody>
+
+</table>
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

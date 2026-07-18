@@ -1,0 +1,155 @@
+/* ==========================
+   LANGUAGE MODAL
+========================== */
+
+.language-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:999999;
+
+    backdrop-filter:blur(6px);
+
+}
+
+.language-box{
+
+    width:430px;
+
+    max-width:92%;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+    animation:popup .4s ease;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.language-logo{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+}
+
+.language-box h2{
+
+    margin-bottom:10px;
+
+    color:#1b5e20;
+
+}
+
+.language-box p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+.language-options{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.language-btn{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#2e7d32;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.language-btn:hover{
+
+    background:#1b5e20;
+
+    transform:translateY(-2px);
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.language-switcher{
+
+    margin-left:20px;
+
+    padding:10px 14px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.language-switcher:focus{
+
+    outline:none;
+
+    border-color:#2e7d32;
+
+}
